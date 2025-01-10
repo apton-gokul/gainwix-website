@@ -24,7 +24,7 @@ export default function PricingPage() {
             <p className="xs:text-[3vw] md:text-[3.2vw] text-center font-bold font-sora from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
               & Affordable Pricing
             </p>
-            <span className="xs:text-[2.5vw] md:text-[2vw]  text-center  font-semibold text-[#616874] md:pt-5 xs:pt-2  font-Inter">
+            <span className="xs:text-[2.5vw] md:text-[1vw] text-center  font-semibold text-[#D4D4D4] md:pt-5 xs:pt-2  font-Inter">
               First 1,000 service conversations per month for free*
             </span>
           </div>
@@ -35,7 +35,7 @@ export default function PricingPage() {
             <p className=" xs:text-[7vw] md:text-[3.2vw] font-extrabold font-raleway from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
               & Affordable Pricing
             </p>
-            <span className="xs:text-[4vw] md:text-[2vw] font-semibold text-[#908eb5] md:pt-5 xs:pt-2 xs:px-3  font-Inter">
+            <span className="xs:text-[4vw] md:text-[1vw] font-semibold text-[#D4D4D4] md:pt-5 xs:pt-2 xs:px-3  font-Inter">
               First 1,000 service conversations per month for free*
             </span>
           </div>

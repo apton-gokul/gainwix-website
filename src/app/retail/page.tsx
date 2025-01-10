@@ -9,6 +9,7 @@ import RetailHero from "../../assets/Icons/Retailhero.svg";
 import RetailCard1 from "../../assets/Icons/RetailCard1.svg";
 import RetailCard2 from "../../assets/Icons/RetailCard2.svg";
 import RetailCard3 from "../../assets/Icons/RetailCard3.svg";
+import retailLanding from "../../assets/Icons/retailLanding.svg";
 
 // components
 import React, { useEffect, useRef, useState } from "react";
@@ -47,7 +48,7 @@ export default function Retail() {
 
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" className="" />
+      {/* <Image src={ECommerceBg} alt="" className="" />
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[100vh] md:min-h-[110vh] xs:min-h-[75vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] md:pt-0 xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
@@ -139,8 +140,67 @@ export default function Retail() {
             />{" "}
           </div>
         </div>
+      </div> */}
+
+      <div className="relative">
+        <Image src={retailLanding} alt="" />
+        <div className="absolute top-[14vw] left-[10vw] flex justify-between w-[53vw]">
+          <div className="w-[35vw]">
+            <h1 className=" xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent font-sora   xs:text-center   lg:text-start leading-[3.5vw]">
+              Grow Your Retail{" "}
+              <span className="bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent">
+                Business With
+              </span>{" "}
+              <br />
+              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                Online to Offline <br /> Marketing{" "}
+              </span>
+            </h1>
+           
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline xs:text-[4vw] text-start ">
+              Increase customer footfalls to your physical store, engage with
+              your existing customers, and scale your revenue with GainWix’s
+              conversational relationship platform.
+            </p>
+            <div className="items-center gap-5 z-50">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold  pointer ">
+                  Request Demo
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col relative">
+            {RetailScrolling?.map((data, index) => (
+              <div
+                key={index}
+                className={`scroll-item mb-2 flex items-center transition-transform duration-700 ease-in-out ${
+                  index !== 3 && "justify-end"
+                } ${
+                  index <= currentIndex
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-full opacity-0"
+                }`}
+              >
+                {data?.icon && (
+                  <Image
+                    src={data.icon}
+                    alt={`Retail Icon ${index + 1}`}
+                    className="transform transition-transform duration-700 ease-in-out"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[200vw] md:mt-[120vw]">
+      <div className="lg:mt-[30vw] xl:mt-20 xs:mt-[200vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">

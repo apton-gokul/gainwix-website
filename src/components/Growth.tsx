@@ -47,7 +47,7 @@ export default function Growth() {
   }, []);
 
   return (
-    <div className="2xl:w-full xl:w-[!100vw] xl:min-h-[45vh] md:min-h-[55vh] lg:min-h-[40vh] lg:py-10 xs:pt-10  xs:auto   xs:min-h-[70vh] overflow-hidden 2xl:py-40 ">
+    <div className="2xl:w-full xl:w-[!100vw] xl:min-h-[45vh] md:min-h-[55vh] lg:min-h-[40vh] lg:py-10 xs:pt-10  xs:auto   xs:min-h-[70vh] overflow-hidden ">
       <div className="relative">
         <Image
           // ref={earthRef}

@@ -71,295 +71,295 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const is2xl = window.matchMedia("(min-width: 1536px)").matches;
+  // useEffect(() => {
+  //   const is2xl = window.matchMedia("(min-width: 1536px)").matches;
 
-    gsap.fromTo(
-      divRef.current,
-      {
-        y: 0,
-        willChange: "transform",
-      },
-      {
-        y: is2xl ? "141.5vh" : "131vh",
-        x: is2xl ? "6.5vh" : "4vh",
-        ease: "power1.inOut",
-        scrollTrigger: {
-          trigger: goalsRef.current,
-          start: "top center",
-          end: "top center",
-          scrub: 2,
-        },
-      }
-    );
-  }, []);
+  //   gsap.fromTo(
+  //     divRef.current,
+  //     {
+  //       y: 0,
+  //       willChange: "transform",
+  //     },
+  //     {
+  //       y: is2xl ? "141.5vh" : "131vh",
+  //       x: is2xl ? "6.5vh" : "4vh",
+  //       ease: "power1.inOut",
+  //       scrollTrigger: {
+  //         trigger: goalsRef.current,
+  //         start: "top center",
+  //         end: "top center",
+  //         scrub: 2,
+  //       },
+  //     }
+  //   );
+  // }, []);
 
-  useEffect(() => {
-    gsap.fromTo(
-      imageRef.current,
-      {
-        scale: 1,
-      },
-      {
-        scale: 0.5, // Shrinking size
-        scrollTrigger: {
-          trigger: imageRef.current,
-          start: "top top", // Trigger when the image is at the top of the screen
-          end: "bottom top", // End when the image reaches the top of the viewport
-          scrub: 5, // Makes the animation follow the scroll
-        },
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   gsap.fromTo(
+  //     imageRef.current,
+  //     {
+  //       scale: 1,
+  //     },
+  //     {
+  //       scale: 0.5, // Shrinking size
+  //       scrollTrigger: {
+  //         trigger: imageRef.current,
+  //         start: "top top", // Trigger when the image is at the top of the screen
+  //         end: "bottom top", // End when the image reaches the top of the viewport
+  //         scrub: 5, // Makes the animation follow the scroll
+  //       },
+  //     }
+  //   );
+  // }, []);
 
-  useEffect(() => {
-    let animation: AnimationItem | null = null; // Type for Lottie animation
-    const container =
-      document.querySelector<HTMLDivElement>(".lottie-container");
+  // useEffect(() => {
+  //   let animation: AnimationItem | null = null; // Type for Lottie animation
+  //   const container =
+  //     document.querySelector<HTMLDivElement>(".lottie-container");
 
-    if (!container) return;
+  //   if (!container) return;
 
-    animation = lottie.loadAnimation({
-      container,
-      path: "https://lottie.host/2b2164f8-cf9d-4976-8569-54d186861111/3wjCimvblG.json",
-      renderer: "svg",
-      autoplay: false,
-      loop: false,
-    });
+  //   animation = lottie.loadAnimation({
+  //     container,
+  //     path: "https://lottie.host/2b2164f8-cf9d-4976-8569-54d186861111/3wjCimvblG.json",
+  //     renderer: "svg",
+  //     autoplay: false,
+  //     loop: false,
+  //   });
 
-    animation.addEventListener("DOMLoaded", () => {
-      // ScrollTrigger for the main animation
-      ScrollTrigger.create({
-        trigger: container, // Target the container
-        start: "top center", // Start animation when the top of the container reaches the center of the viewport
-        end: "bottom center", // End when the bottom of the container reaches the center
-        scrub: 1, // Smooth progress linked to scroll
-        onUpdate: (self) => {
-          const progress = self.progress; // Get ScrollTrigger's progress (0 to 1)
-          if (animation) {
-            const frame = Math.floor(animation.totalFrames * progress); // Map progress to frames
-            animation.goToAndStop(frame, true); // Jump to the appropriate frame
-          }
-        },
-        onLeave: () => {
-          // Triggered when leaving the scroll range
-          if (animation) {
-            animation.goToAndStop(animation.totalFrames - 1, true); // Display only the chess icon
-          }
-        },
-        onEnterBack: () => {
-          // Re-entering the scroll range
-          if (animation) {
-            animation.goToAndStop(0, true); // Reset to the first frame
-          }
-        },
-      });
-    });
+  //   animation.addEventListener("DOMLoaded", () => {
+  //     // ScrollTrigger for the main animation
+  //     ScrollTrigger.create({
+  //       trigger: container, // Target the container
+  //       start: "top center", // Start animation when the top of the container reaches the center of the viewport
+  //       end: "bottom center", // End when the bottom of the container reaches the center
+  //       scrub: 1, // Smooth progress linked to scroll
+  //       onUpdate: (self) => {
+  //         const progress = self.progress; // Get ScrollTrigger's progress (0 to 1)
+  //         if (animation) {
+  //           const frame = Math.floor(animation.totalFrames * progress); // Map progress to frames
+  //           animation.goToAndStop(frame, true); // Jump to the appropriate frame
+  //         }
+  //       },
+  //       onLeave: () => {
+  //         // Triggered when leaving the scroll range
+  //         if (animation) {
+  //           animation.goToAndStop(animation.totalFrames - 1, true); // Display only the chess icon
+  //         }
+  //       },
+  //       onEnterBack: () => {
+  //         // Re-entering the scroll range
+  //         if (animation) {
+  //           animation.goToAndStop(0, true); // Reset to the first frame
+  //         }
+  //       },
+  //     });
+  //   });
 
-    // Cleanup on component unmount
-    return () => {
-      if (animation) animation.destroy(); // Destroy Lottie instance
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger instances
-    };
-  }, []);
+  //   // Cleanup on component unmount
+  //   return () => {
+  //     if (animation) animation.destroy(); // Destroy Lottie instance
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger instances
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const travelDiv = travelDivRef.current;
-    const segmentDiv = segmentImageRef.current;
-    const scaleThrough = scaleThroughRef.current;
+  // useEffect(() => {
+  //   const travelDiv = travelDivRef.current;
+  //   const segmentDiv = segmentImageRef.current;
+  //   const scaleThrough = scaleThroughRef.current;
 
-    if (travelDiv && segmentDiv && scaleThrough) {
-      gsap.to(travelDiv, {
-        scrollTrigger: {
-          trigger: travelDiv,
-          start: "top center", // Top-to-bottom start
-          endTrigger: segmentDiv,
-          end: "bottom center", // Top-to-bottom end
-          scrub: true,
-          onUpdate: (self) => {
-            const progress = self.progress;
+  //   if (travelDiv && segmentDiv && scaleThrough) {
+  //     gsap.to(travelDiv, {
+  //       scrollTrigger: {
+  //         trigger: travelDiv,
+  //         start: "top center", // Top-to-bottom start
+  //         endTrigger: segmentDiv,
+  //         end: "bottom center", // Top-to-bottom end
+  //         scrub: true,
+  //         onUpdate: (self) => {
+  //           const progress = self.progress;
 
-            const xOffset =
-              window.innerWidth >= 1280 // xl breakpoint
-                ? 1100 // Adjust offset for xl
-                : window.innerWidth >= 1600 // 2xl breakpoint
-                ? 10 // Adjust offset for 2xl
-                : 10; // Default offset
+  //           const xOffset =
+  //             window.innerWidth >= 1280 // xl breakpoint
+  //               ? 1100 // Adjust offset for xl
+  //               : window.innerWidth >= 1600 // 2xl breakpoint
+  //               ? 10 // Adjust offset for 2xl
+  //               : 10; // Default offset
 
-            const yOffset =
-              window.innerWidth >= 1280
-                ? 800
-                : window.innerWidth >= 1920
-                ? 10000
-                : 10000;
+  //           const yOffset =
+  //             window.innerWidth >= 1280
+  //               ? 800
+  //               : window.innerWidth >= 1920
+  //               ? 10000
+  //               : 10000;
 
-            const xDistance =
-              segmentDiv.getBoundingClientRect().left -
-              travelDiv.getBoundingClientRect().left +
-              xOffset;
-            const yDistance =
-              segmentDiv.getBoundingClientRect().top -
-              travelDiv.getBoundingClientRect().top +
-              yOffset;
+  //           const xDistance =
+  //             segmentDiv.getBoundingClientRect().left -
+  //             travelDiv.getBoundingClientRect().left +
+  //             xOffset;
+  //           const yDistance =
+  //             segmentDiv.getBoundingClientRect().top -
+  //             travelDiv.getBoundingClientRect().top +
+  //             yOffset;
 
-            const newX = xDistance * progress;
-            const newY = yDistance * progress;
+  //           const newX = xDistance * progress;
+  //           const newY = yDistance * progress;
 
-            gsap.to(travelDiv, {
-              x: newX,
-              y: newY,
-              duration: 0.1,
-              ease: "none",
-            });
-          },
-        },
-      });
+  //           gsap.to(travelDiv, {
+  //             x: newX,
+  //             y: newY,
+  //             duration: 0.1,
+  //             ease: "none",
+  //           });
+  //         },
+  //       },
+  //     });
 
-      gsap.to(travelDiv, {
-        scrollTrigger: {
-          trigger: segmentDiv,
-          start: "bottom center", // Bottom-to-top start
-          endTrigger: scaleThrough,
-          end: "top center", // Bottom-to-top end
-          scrub: true,
-          onUpdate: (self) => {
-            const progress = self.progress;
+  //     gsap.to(travelDiv, {
+  //       scrollTrigger: {
+  //         trigger: segmentDiv,
+  //         start: "bottom center", // Bottom-to-top start
+  //         endTrigger: scaleThrough,
+  //         end: "top center", // Bottom-to-top end
+  //         scrub: true,
+  //         onUpdate: (self) => {
+  //           const progress = self.progress;
 
-            const getScreenSize = () => {
-              if (window.matchMedia("(min-width: 1536px)").matches) {
-                return "2xl";
-              } else if (window.matchMedia("(min-width: 1280px)").matches) {
-                return "xl";
-              } else {
-                return "default";
-              }
-            };
+  //           const getScreenSize = () => {
+  //             if (window.matchMedia("(min-width: 1536px)").matches) {
+  //               return "2xl";
+  //             } else if (window.matchMedia("(min-width: 1280px)").matches) {
+  //               return "xl";
+  //             } else {
+  //               return "default";
+  //             }
+  //           };
 
-            const calculatePosition = (progress: any) => {
-              const screenSize = getScreenSize();
+  //           const calculatePosition = (progress: any) => {
+  //             const screenSize = getScreenSize();
 
-              let xOffset, yOffset;
+  //             let xOffset, yOffset;
 
-              switch (screenSize) {
-                case "2xl":
-                  xOffset = 0;
-                  yOffset = 0;
-                  break;
+  //             switch (screenSize) {
+  //               case "2xl":
+  //                 xOffset = 0;
+  //                 yOffset = 0;
+  //                 break;
 
-                // case "xl":
-                //   xOffset = 20;
-                //   yOffset = 1050;
-                //   break;
-                default:
-                  xOffset = 5;
-                  yOffset = 560;
-              }
+  //               // case "xl":
+  //               //   xOffset = 20;
+  //               //   yOffset = 1050;
+  //               //   break;
+  //               default:
+  //                 xOffset = 5;
+  //                 yOffset = 560;
+  //             }
 
-              const xDistance =
-                scaleThrough.getBoundingClientRect().right -
-                segmentDiv.getBoundingClientRect().right;
-              const yDistance =
-                scaleThrough.getBoundingClientRect().top -
-                segmentDiv.getBoundingClientRect().top;
+  //             const xDistance =
+  //               scaleThrough.getBoundingClientRect().right -
+  //               segmentDiv.getBoundingClientRect().right;
+  //             const yDistance =
+  //               scaleThrough.getBoundingClientRect().top -
+  //               segmentDiv.getBoundingClientRect().top;
 
-              const newX = xDistance * progress + xOffset;
-              const newY = yDistance * progress + yOffset;
+  //             const newX = xDistance * progress + xOffset;
+  //             const newY = yDistance * progress + yOffset;
 
-              return { newX, newY };
-            };
+  //             return { newX, newY };
+  //           };
 
-            const { newX, newY } = calculatePosition(progress);
+  //           const { newX, newY } = calculatePosition(progress);
 
-            gsap.to(travelDiv, {
-              x: newX,
-              y: newY,
-            });
-          },
-        },
-      });
-    }
+  //           gsap.to(travelDiv, {
+  //             x: newX,
+  //             y: newY,
+  //           });
+  //         },
+  //       },
+  //     });
+  //   }
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    const animateIcons = (direction: any) => {
-      const refs = [
-        {
-          ref: whatsappRef,
-          start: { y: -100, x: -10 },
-          end: { y: -80, x: -10 },
-        },
-        { ref: slackRef, start: { y: -100, x: 10 }, end: { y: -80, x: -10 } },
-        {
-          ref: instagramRef,
+  // useEffect(() => {
+  //   const animateIcons = (direction: any) => {
+  //     const refs = [
+  //       {
+  //         ref: whatsappRef,
+  //         start: { y: -100, x: -10 },
+  //         end: { y: -80, x: -10 },
+  //       },
+  //       { ref: slackRef, start: { y: -100, x: 10 }, end: { y: -80, x: -10 } },
+  //       {
+  //         ref: instagramRef,
 
-          start: { y: -100, x: -10 },
-          end: { y: -80, x: 10 },
-        },
-        {
-          ref: LinkedInRef,
-          start: { y: -100, x: -10 },
-          end: { y: -90, x: 10 },
-        },
-        {
-          ref: MessageRef,
-          start: { y: -100, x: -10 },
-          end: { y: -80, x: 10 },
-        },
-        { ref: TicktokRef, start: { y: -100, x: 30 }, end: { y: -80, x: 10 } },
-      ];
+  //         start: { y: -100, x: -10 },
+  //         end: { y: -80, x: 10 },
+  //       },
+  //       {
+  //         ref: LinkedInRef,
+  //         start: { y: -100, x: -10 },
+  //         end: { y: -90, x: 10 },
+  //       },
+  //       {
+  //         ref: MessageRef,
+  //         start: { y: -100, x: -10 },
+  //         end: { y: -80, x: 10 },
+  //       },
+  //       { ref: TicktokRef, start: { y: -100, x: 30 }, end: { y: -80, x: 10 } },
+  //     ];
 
-      refs.forEach(({ ref, start, end }) => {
-        if (ref.current) {
-          gsap.fromTo(
-            ref.current.querySelector("img"),
-            direction === "down" ? start : end,
-            {
-              ...((direction === "down" ? end : start) as object),
-              duration: 2,
-              ease: "power2.inOut",
-              repeat: -1,
-              yoyo: true,
-            }
-          );
-        }
-      });
-    };
+  //     refs.forEach(({ ref, start, end }) => {
+  //       if (ref.current) {
+  //         gsap.fromTo(
+  //           ref.current.querySelector("img"),
+  //           direction === "down" ? start : end,
+  //           {
+  //             ...((direction === "down" ? end : start) as object),
+  //             duration: 2,
+  //             ease: "power2.inOut",
+  //             repeat: -1,
+  //             yoyo: true,
+  //           }
+  //         );
+  //       }
+  //     });
+  //   };
 
-    animateIcons("down");
+  //   animateIcons("down");
 
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const direction = currentScrollY > lastScrollY ? "down" : "up";
-      lastScrollY = currentScrollY;
+  //   let lastScrollY = window.scrollY;
+  //   const handleScroll = () => {
+  //     const currentScrollY = window.scrollY;
+  //     const direction = currentScrollY > lastScrollY ? "down" : "up";
+  //     lastScrollY = currentScrollY;
 
-      animateIcons(direction);
-    };
+  //     animateIcons(direction);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
   useEffect(() => {
     gsap.fromTo(
       ".card",
       { rotation: 0, x: 10 },
       {
         rotation: 0, // Final rotation (no rotation)
-        x: (index) => index * 350, // Separate cards horizontally (adjust as needed)
+        x: (index) => index * 450, // Separate cards horizontally (adjust as needed)
         scrollTrigger: {
           trigger: ".cards-container",
           start: "top bottom", // Start the animation when the container is in view
@@ -439,20 +439,20 @@ export default function Home() {
           </h1>
         </div>
         <div className="w-[100%]  flex justify-center md:text-[4vw] lg:text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12 z-20 relative">
-          <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 ">
+          <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold ">
             <a
               href="https://calendly.com/sales-h-cn/30min?month=2024-12"
               target="_blank"
               rel="noreferrer"
               className="2xl:mt-[-0.7vw]"
             >
-              Request Demo
+              Get Started
             </a>
           </button>
           <button>
-            <div className="w-[100%] flex flex-row border-4 border-[#111449] p-4 rounded-full align-center justify-center items-center">
+            <div className="w-[100%] flex flex-row border-[1px] border-[#0F4EEF] p-3.5 rounded-full align-center justify-center items-center bg-[#111449]">
               <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-              <p className="lg:text-[1.05vw] md:text-[2vw] text-[#FFFFFF] font-Inter">
+              <p className="lg:text-[0.95vw] md:text-[2vw] text-[#FFFFFF] font-Inter">
                 Tech Partner
               </p>
             </div>
@@ -602,7 +602,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className=" xs:hidden md:flex w-[100%] overflow-visible flex  flex-row  justify-center absolute top-44">
+          <div className="xs:hidden md:flex w-[100%] overflow-visible flex  flex-row  justify-center absolute top-[15vw]">
             <div className="flex relative">
               <Image
                 src={Marketing_first}

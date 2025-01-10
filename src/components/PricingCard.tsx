@@ -53,12 +53,12 @@ const PricingCard = () => {
 
       <div className=" w-full h-[15vh] flex md:flex-row items-center md:my-16 sticky top-[8rem]  backdrop-blur-xl xs:flex-col xs:p-6 xs:my-6 xs:gap-10 md:gap-0">
         <div className="lg:w-[30%] md:w-[60%] h-full flex flex-row justify-center items-center md:border-b border-b-[#2D3154] xs:w-full md:mx-[-10vw] lg:mx-0 ">
-          <div className="bg-[] flex flex-row gap-5 justify-center items-center xs:p-[3vw] md:p-[0.6vw] rounded-[46px] w-[60%] border border-[#4A2DAA]">
+          <div className="bg-[] flex flex-row gap-5 justify-center items-center xs:p-[3vw] md:p-[0.6vw] rounded-[46px] w-[70%] border border-[#4A2DAA]">
             {["monthly", "yearly"].map((option: string) => (
               <p
                 key={option}
                 onClick={() => handleClick(option)}
-                className={`lg:w-[10vw]  md:w-[15vw] lg:px-[2vw] lg:py-[0.6vw] xs:px-3 xs:py-2 lg:rounded-[2vw] md:rounded-[12vw] xs:rounded-[10vw] lg:text-[0.95vw] md:[1vw] font-semibold font-Inter text-center transition-colors ease-linear duration-300 xs:text-[2.5vw] cursor-pointer`}
+                className={`lg:w-[10vw]  md:w-[15vw] lg:px-[1vw] lg:py-[0.6vw] xs:px-3 xs:py-2 lg:rounded-[2vw] md:rounded-[12vw] xs:rounded-[10vw] lg:text-[0.95vw] md:[1vw] font-semibold font-Inter text-center transition-colors ease-linear duration-300 xs:text-[2.5vw] cursor-pointer`}
                 style={{
                   color: selectedOption === option ? "#F6EDFF" : "#2B2E4F",
                   backgroundColor:
@@ -80,10 +80,10 @@ const PricingCard = () => {
                   style={BrandStyle}
                   className="flex flex-col text-center items-center justify-center pb-10 pt-5  2xl:pl-[12vw]   border-r-[#2D3154] border-b-[#2D3154]"
                 >
-                  <span className="lg:text-[1.5vw] md:text-[2.3vw] text-[#55567A] font-Sora font-semibold xs:text-[4vw] 2xl:pl-[5vw]">
+                  <span className="lg:text-[1.5vw] md:text-[2.3vw] text-[#55567A] font-Sora font-semibold xs:text-[4vw]">
                     {data.name}
                   </span>
-                  <p className="lg:text-[2vw] 2xl:w-[20vw]  md:text-[2.5vw] xs:text-[4vw]  font-Inter font-bold text-[#FFFFFF] flex flex-row  justify-center xs:pt-2 md:pt-0 2xl:pl-[5vw] ">
+                  <p className="lg:text-[2vw] md:text-[2.5vw] xs:text-[4vw]  font-Inter font-bold text-[#FFFFFF] flex flex-row  justify-center xs:pt-2 md:pt-0 ">
                     {data.value}
                     {data?.text && (
                       <span className="text-[#FFFFFF] font-Sora  lg:text-[0.95vw]  md:text-[1.5vw] xs:text-[2vw] font-medium lg:pt-4 xs:pt-2 lg:pl-5  2xl:pl-2 md:pt-2 2xl:pt-5">

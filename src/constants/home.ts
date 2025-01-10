@@ -577,13 +577,13 @@ export const ConversationFeeList = [
 export const PlanList = [
   {
     id: 1,
-    value: 'Stater',
+    value: 'Starter',
     cost: '1000',
   },
   {
     id: 2,
     value: 'Growth',
-    cost: '2,500',
+    cost: '2500',
   },
   {
     id: 3,

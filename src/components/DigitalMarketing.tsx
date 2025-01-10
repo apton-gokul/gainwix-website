@@ -109,10 +109,10 @@ const Carousel: React.FC = () => {
       <div ref={sliderRef} className="keen-slider xs:hidden ">
         {slides.map((slide) => (
           <div key={slide.id} className="keen-slider__slide">
-            <div className="w-[90%] md:w-[70%] lg:w-[70%] xl:h-[60vh] xl:flex xl:flex-row xs:flex-row-reverse bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] rounded-lg pt-4 pl-4 pr-4 text-white shadow-lg mx-auto">
-              <div className="flex flex-col">
+            <div className="w-[75%] xl:flex xl:flex-row xs:flex-row-reverse bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] rounded-3xl text-white shadow-lg mx-auto p-20">
+              <div className="flex flex-col justify-center">
                 <Image src={slide.brand} alt="Slide" />{" "}
-                <p className="lg:text-[1vw] md:text-[1.5vw] xs:text-[3vw] text-[#908eb5] mt-[10vw]  xl:w-[40vw]">
+                <p className="lg:text-[1vw] md:text-[1.5vw] xs:text-[3vw] text-[#908eb5] py-10 xl:w-[40vw]">
                   {slide.description}
                 </p>
                 <p className="text-[1.2vw] mt-4 font-bold lg:text-[1.5vw] md:text-[2vw] xs:text-[4vw]">
@@ -125,7 +125,7 @@ const Carousel: React.FC = () => {
               <Image
                 src={slide.icon}
                 alt="Slide"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full object-cover"
               />
             </div>
           </div>

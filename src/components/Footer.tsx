@@ -38,7 +38,7 @@ export default function Footer(): JSX.Element {
 
   return (
     <div className="xs:px-5 md:layout text-white bg-[#060A22]">
-      <div className="xl:min-h-[50vh] pt-[4.5vw] md:pl-[3vw] lg:flex pb-[1vw] gap-20 xs:block xl:w-[80vw] 2xl:w-[64vw] xl:m-auto">
+      <div className="xl:min-h-[50vh] pt-[4.5vw] md:pl-[3vw] lg:flex pb-[1vw] gap-20 xs:block xl:w-[80vw] 2xl:w-[80vw] xl:m-auto">
         {/* Logo and Description */}
         <div className="w-[40vw] lg:block">
           <Image
@@ -143,7 +143,7 @@ type SocialMediaLinkProps = {
 };
 
 const SocialMediaLink: React.FC<SocialMediaLinkProps> = ({ href, Icon }) => (
-  <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]">
+  <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center">
     {href ? (
       <a href={href} target="_blank" rel="noopener noreferrer">
         <Icon />

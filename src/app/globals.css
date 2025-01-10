@@ -269,3 +269,9 @@
 .animate-marquee {
   animation: marquee 10s linear infinite;
 }
+
+:where(.css-dev-only-do-not-override-ni1kz0).ant-popover .ant-popover-inner {
+  background-color: #0e132d !important;
+  border-radius: 20px !important;
+  border: 1px solid #2D3154 !important;
+}

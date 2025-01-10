@@ -26,10 +26,10 @@ export default function Home() {
 
         <div className=" absolute left-[1vh] xl:w-[100%] md:h-[40vh] lg:h-[70vh] flex flex-row  justify-center text-white mb-10 xl:mb-0 ">
           <div className="lg:block  md:block xs:hidden w-[50%] flex flex-col xl:mt-[30vh] lg:mt-[-10vw] md:mt-[-20vw] xl:pl-[15vw] ">
-            <h1 className="text-3xl font-Sora font-semibold mb-5">
+            <h1 className="text-[2.7vw] font-semibold font-Sora mb-5">
               Segmentation AI
             </h1>
-            <p className="text-lg font-Inter font-medium text-[#908EB5] leading-8">
+            <p className="text-lg font-Inter font-medium text-[#908EB5] leading-8 xl:text-[1vw]">
               Accurately segment your audience using AI to deliver personalized
               messages that resonate, driving higher engagement and conversion
               rates.

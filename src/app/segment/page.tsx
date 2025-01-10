@@ -7,6 +7,7 @@ import Strargy from "../../assets/Icons/strategy AI (1).svg";
 import segment1 from "../../assets/Icons/segment1.svg";
 import segment2 from "../../assets/Icons/segment2.svg";
 import segment3 from "../../assets/Icons/segment3.svg";
+import segmentLanding from "../../assets/Icons/segmentationLanding.svg";
 
 import segmentHero from "../../assets/Icons/Segmentation AI.svg";
 // components
@@ -37,7 +38,7 @@ interface Props {
 export default function segment() {
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={Strargy} alt="" className="" />
+      {/* <Image src={Strargy} alt="" className="" />
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[60vh] md:min-h-[65vh] xs:min-h-[45vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem]  ">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36 xl:mt-[10vw]  2xl:mt-[-5vw] ">
           <div className=" flex flex-col xs:mt-[5vw] xl: mt-[13vw] 2xl:mt-[18vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
@@ -86,14 +87,7 @@ export default function segment() {
                 </button>
               </a>
 
-              {/* <button>
-                <div className="lg:hidden xs:block w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
-                  <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-                  <p className=" xs:text-[4vw] md:text-[2vw] lg:text-[1.05vw] text-[#FFFFFF] font-Inter font-medium">
-                    Tech Partner
-                  </p>
-                </div>
-              </button>{" "} */}
+            
             </div>
           </div>
 
@@ -101,12 +95,51 @@ export default function segment() {
             <Image src={segmentHero} alt="hero" className="" />
           </div>
         </div>
+      </div> */}
+
+      <div className="relative">
+        <Image src={segmentLanding} alt="" />
+        <div className="absolute top-[14vw] left-[10vw]">
+          <div className="w-[35vw]">
+            <h1 className="xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw] leading-[3.8vw]  font-bold   text-[white] font-sora text-start">
+              Reach Right <br />
+              <p className="text-[3vw] font-bold   text-[white] font-sora text-start">
+                {" "}
+                Audience at the <br />
+                <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                  Right Time with Segmentation AI{" "}
+                </span>
+              </p>
+            </h1>
+
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 text-[1vw] text-[#908eb5] xl:w-[28.5vw] md:items-center lg:items-baseline xl:text-start ">
+              Create precise customer segments based on behaviors, demographics,
+              and more. Deliver personalized, relevant messages that resonate,
+              improving engagement, retention, and conversions across every
+              campaign
+            </p>
+
+            <div className="items-center gap-5 ">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold pointer ">
+                  Request Demo
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className=" rounded-[120px]  lg:min-h-[120vh] xl:min-h-[150vh] xs:mt-[70vw] md:mt-[100vw] lg:mt-[80vw] xl:mt-0 ">
+      <div className=" rounded-[120px]  lg:min-h-[120vh] xl:min-h-[150vh] mt-0 ">
         <div className="md:py-0 xs:py-5  ">
           <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
-            <div className="xs:hidden md:block w-[100%] h-[24vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
+            <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
               <h1 className="xl:text-[3vw] lg:text-[5vw] md:text-[5vw] font-semibold text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">Set new benchmarks and hit Goals</p>
                 <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
@@ -205,7 +238,7 @@ export default function segment() {
               image={segment2}
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  xl:py-10 xl:pb-40">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l xl:py-10 xl:pb-[12vw]">
             <CommonCard
               text
               // className="xl:mx-[3rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
@@ -279,10 +312,10 @@ export default function segment() {
               content1: string;
             }) => (
               <div
-                className="xs:w-[100%]  md:w-[30vw] md:h-[33vh] xs:h-[52vh] lg:w-[30%] lg:h-[30vh] xl:w-[25%] xl:h-[43vh] xs:rounded-[30px]   bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] p-6 text-white shadow-lg "
+                className="xs:w-[100%]  md:w-[30vw] md:h-[50vh] xs:h-[52vh] lg:w-[30%] lg:h-[30vh] xl:w-[25%] xl:h-[43vh] xs:rounded-[30px]   bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] p-6 text-white shadow-lg "
                 key={item?.id}
               >
-                <div className="flex-col text-white w-full flex text-[1.2vw] align-center 2xl:mt-16 xl:mt-6 justify-center items-start ">
+                <div className="flex-col text-white w-full flex text-[1.2vw] align-center xl:mt-6 justify-center items-start ">
                   <Image
                     src={item?.icon}
                     alt=""

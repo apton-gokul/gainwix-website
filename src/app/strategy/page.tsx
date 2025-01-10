@@ -16,6 +16,7 @@ import strargyHero1 from "../../assets/Icons/strategy AI (2).svg";
 import strargyHero from "../../assets/Icons/strategy AI (1.2).svg";
 import strargyHero2 from "../../assets/Icons/board.svg";
 import strargyHero3 from "../../assets/Icons/coin.svg";
+import strategyLanding from "../../assets/Icons/strategyLanding.svg";
 
 // components
 import React, { useEffect, useRef } from "react";
@@ -29,7 +30,7 @@ import { StrargyList, StrargyType } from "@constants/home";
 export default function Ecommerce() {
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={Strargy} alt="" className="" />
+      {/* <Image src={Strargy} alt="" className="" />
 
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[55vh] xs:min-h-[35vh]  flex flex-col justify-end   absolute  xl:top-[-45vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20  ">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36 xl:mt-[10vw]  2xl:mt-[-5vw] ">
@@ -68,14 +69,7 @@ export default function Ecommerce() {
                 </button>
               </a>
 
-              {/* <button>
-                <div className="lg:hidden xs:block w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
-                  <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-                  <p className=" xs:text-[4vw] md:text-[2vw] lg:text-[1.05vw] text-[#FFFFFF] font-Inter font-medium">
-                    Tech Partner
-                  </p>
-                </div>
-              </button>{" "} */}
+        
             </div>
           </div>
           <div className="xs:hidden xl:block  opacity-45 blend-screen absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:left-[-1vw] xl:top-[45vw]  md:right-[10vw] w-full h-full flex justify-end">
@@ -91,24 +85,66 @@ export default function Ecommerce() {
             <Image src={strargyHero} alt="hero" className="" />
           </div>
         </div>
+      </div> */}
+
+      <div className="relative">
+        <Image src={strategyLanding} alt="" />
+        <div className="absolute top-[14vw] left-[10vw]">
+          <div className="w-[35vw]">
+            <h1 className="xl:block leading-[3.8vw] 2xl:block xl:text-[3vw] sm-text-[1vw] md:text-[3vw] font-bold   text-[white] font-sora   xs:text-center   lg:text-start">
+              Build Game Changing <br />
+              <p className="xl:text-[3vw] xs:text-[7vw] lg:text-[2.5vw] md:text-[3vw] font-bold   text-[white] font-sora    xs:text-center   lg:text-start">
+                {" "}
+                Marketing Strategies <br />
+                <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                  with Gainwix’s Strategy AI 
+                </span>
+              </p>
+            </h1>
+            {/* <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw] lg:-mt-[100vw]  xs:text-center   lg:text-center xs:mt-10   ">
+              Build Game Changing Marketing <br /> Strategies
+              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                with Gainwix’s Strategy AI 
+              </span>{" "}
+            </h1> */}
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7  xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw] md:items-center lg:items-baseline  xl:text-start ">
+              Achieve your marketing goals faster with our AI-driven strategy
+              tool designed for precision and results.
+            </p>
+
+            <div className="items-center gap-5 ">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold pointer ">
+                  Request Demo
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] md:min-h-[150vh] ">
-        <div className="md:pt-[16vw] lg:py-0 xs:py-5  ">
+        <div className=" lg:py-0 xs:py-5  ">
           <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
-            <div className="xs:hidden md:block w-[100%] h-[24vh] flex justify-center text-[3vw] font-medium font-Sora py-10 xl:mt-0 lg:mt-[60vw] ">
-              <h1 className="xl:text-[3vw] md:text-[4vw] lg:text-[5vw] font-medium text-[#FFFFFF] font-Sora text-center ">
+            <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 xl:mt-0 ">
+              <h1 className="xl:text-[3vw] font-medium text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">Set new benchmarks and hit Goals</p>
                 <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
                   effortlessly with our AI
                 </span>
-                <p className="lg:text-[2.5vw] md:text-[1.5vw] xl:text-[1vw] text-[#908EB5] text-center ">
+                <p className=" md:text-[1.5vw] xl:text-[1vw] text-[#908EB5] text-center ">
                   Leverage AI in every step of your digital marketing and
                   optimize your campaign performance
                 </p>
               </h1>
             </div>
-            <div className="xs:block md:hidden w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 mt-[100vw]">
+            {/* <div className="xs:block md:hidden w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 mt-[100vw]">
               <h1 className="text-[7vw] font-bold text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">
                   Set new benchmarks And <br /> Hit Goals{" "}
@@ -120,7 +156,7 @@ export default function Ecommerce() {
                   with GainWix.AI
                 </span>
               </h1>
-            </div>
+            </div> */}
             <CommonCard
               // className=" xl:mx-[9v] lg:mx-[3rem]  w-full "
               text
@@ -262,7 +298,7 @@ export default function Ecommerce() {
           </div>
           <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <CommonCard
-              className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] py-20 "
+              className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] pt-20 pb-[8vw]"
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw]   ">
@@ -319,13 +355,13 @@ export default function Ecommerce() {
           </h1>
         </div>
 
-        <div className="2xl:w-[64vw] flex flex-row  xl:gap-5 md:gap-5 xs:gap-[5vw] justify-start overflow-x-auto   md:w-full  xs:w-[90vw] xl:w-[70vw] xl:min-h-[35vw] xs:m-auto xs:justify-start md:justify-center md:items-center xs:mt-10 ">
+        <div className="2xl:w-[64vw] flex flex-row  xl:gap-5 md:gap-5 xs:gap-[5vw] justify-start overflow-x-auto   md:w-full  xs:w-[90vw] xl:w-[70vw]  xs:m-auto xs:justify-start md:justify-center md:items-center xs:mt-10 !mb-20 ">
           {StrargyList?.map((data: StrargyType) => (
             <div
-              className="xs:w-[70vw]  md:w-[30vw] md:h-[15vh] xs:h-[20vh] lg:w-[30%] lg:h-[23vh] xl:w-[20%] xl:h-[25vh] xs:rounded-[30px]   bg-gradient-to-b from-[#2d3154] via-[#2D3154] to-[#0c0b24] p-6 text-white shadow-lg "
+              className="xs:w-[70vw]  md:w-[30vw] md:h-[25vh] xs:h-[20vh] lg:w-[30%] lg:h-[23vh] xl:w-[20%] xl:h-[25vh] xs:rounded-[30px]   bg-gradient-to-b from-[#2d3154] via-[#2D3154] to-[#0c0b24] p-6 text-white shadow-lg "
               key={data?.id}
             >
-              <div className="flex-col text-white w-full flex text-[1.2vw] align-center 2xl:mt-16 xl:mt-6 justify-center items-start ">
+              <div className="flex-col text-white w-full flex text-[1.2vw] align-center xl:mt-6 justify-center items-start ">
                 <Image src={data?.icon} alt="" className="w-[30%] h-[30%]" />
 
                 <span className="font-Inter pt-5 font-medium xs:text-[3vw] md:text-[1.5vw] lg:text-[1.5vw] xl:text-[1vw] text-[#FFFFFF]   xs:px-1">

@@ -35,27 +35,30 @@ export default function Ecommerce() {
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    let scrollAmount = 0;
+    let currentIndex = 0;
 
     const scrollImages = () => {
       if (scrollContainer) {
-        scrollAmount += 1;
+        const scrollWidth = scrollContainer.scrollWidth;
+        const clientWidth = scrollContainer.clientWidth;
+        const totalItems = EcommerceScorlling.length;
 
-        if (
-          scrollAmount >=
-          scrollContainer.scrollWidth - scrollContainer.clientWidth
-        ) {
-          scrollAmount = 0;
+        const itemWidth = clientWidth;
+
+        currentIndex += 1;
+
+        if (currentIndex >= totalItems) {
+          currentIndex = 0;
         }
 
         scrollContainer.scrollTo({
-          left: scrollAmount,
+          left: currentIndex * itemWidth,
           behavior: "smooth",
         });
       }
     };
 
-    const interval = setInterval(scrollImages, 20);
+    const interval = setInterval(scrollImages, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -63,7 +66,7 @@ export default function Ecommerce() {
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" className="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[115vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20 ">
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[70vh] md:min-h-[115vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[10vw] md:top-[10vw] md:py-0 md:px-[5rem] xs:pt-20 ">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36 xl:mt-[10vw]  2xl:mt-[-5vw] ">
           <div className=" flex flex-col xs:mt-[5vw] xl: mt-[13vw] 2xl:mt-[18vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
             <h1 className=" md:hidden lg:hidden xl:block  2xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw] leading-[4vw] ">
@@ -101,7 +104,7 @@ export default function Ecommerce() {
                 className="2xl:mt-[-0.7vw]"
               >
                 {" "}
-                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 pointer ">
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold pointer ">
                   Request Demo
                 </button>
               </a>
@@ -116,14 +119,15 @@ export default function Ecommerce() {
               </button>{" "} */}
             </div>
           </div>
+
           <div
             ref={scrollRef}
-            className=" xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[73  vw] xl:left-[-1vw]  2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
+            className="xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[73vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
           >
-            <div className="flex md:space-x-4 xs:space-x-1">
+            <div className="flex space-x-0 transition-all duration-1000">
               {EcommerceScorlling?.map((data, index) => (
                 <div
-                  className="scroll-item mb-4 flex items-center justify-center"
+                  className="flex-shrink-0 w-full mb-4 flex items-center justify-center"
                   key={index}
                 >
                   <Image
@@ -137,12 +141,13 @@ export default function Ecommerce() {
               ))}
             </div>
           </div>
+
           <div className="absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:right-[8vw] xl:top-[30vw]  md:right-[10vw] w-full h-full flex justify-end">
             <Image src={ecommerce1} alt="hero" className="" />
           </div>
         </div>
       </div>
-      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[210vw] md:mt-[120vw]">
+      <div className="lg:mt-[50vw] xl:mt-20 xs:mt-[210vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">
@@ -226,13 +231,13 @@ export default function Ecommerce() {
               image={EcommerceCard2}
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  xl:py-10 xl:pb-20">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  xl:py-10 xl:pb-[8vw]">
             <CommonCard
               text
               // className="xl:mx-[3rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
               customTitle={
                 <>
-                  <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center mb-5 xl:mt-20">
+                  <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center !mb-10 xl:mt-20">
                     <p className="lg:text-[1vw] md:text-[1vw] xs:text-[4vw] font-semibold lg:pl-2 text-[#09CC94] xl:px-4">
                       Gain Loyalty
                     </p>
@@ -308,4 +313,3 @@ export default function Ecommerce() {
     </div>
   );
 }
-

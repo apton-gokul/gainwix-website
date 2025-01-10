@@ -61,7 +61,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
             >
               {item.title && (
                 <>
-                  <div className=" text-[1.5vw] font-semibold text-[#908EB5]  font-Inter  ">
+                  <div className=" text-[1vw] font-semibold text-[#908EB5]  font-Inter  ">
                     {item.title}
                   </div>
                   <div className="font-medium text-[#55567A] text-[1vw]  font-Inter">

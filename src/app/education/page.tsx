@@ -12,6 +12,7 @@ import EducationCard1 from "../../assets/Icons/EducationCard1.svg";
 import EducationCard2 from "../../assets/Icons/EducationCard2.svg";
 import EducationCard3 from "../../assets/Icons/EducationCard3.svg";
 import EducationCard4 from "../../assets/Icons/EducationCard4.svg";
+import educationLanding from "../../assets/Icons/educationLanding.svg";
 
 // components
 import BrandScroll from "@components/BrandScroll";
@@ -57,7 +58,7 @@ export default function Education() {
 
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" />
+      {/* <Image src={ECommerceBg} alt="" />
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[90vh] lg:min-h-[90vh] md:min-h-[100vh] xs:min-h-[55vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
@@ -140,27 +141,67 @@ export default function Education() {
               // className="xl:w-[80vw] xl:h-[50vh] lg:w-[60vw] lg:h-[50vh]"
             />
           </div>
-          {/* <div
-  style={{
-    top: `calc(var(--vh) * 54)`,
-  }}
-  className="absolute xs:top-[calc(var(--vh)*100)] 
-                     lg:right-[20vw] lg:top-[calc(var(--vh)*40)] 
-                     xl:left-[6vw] xl:top-[calc(var(--vh)*30)] 
-                     2xl:top-[calc(var(--vh)*31)] 2xl:left-[4.2vw] 
-                     md:right-[10vw] md:top-[calc(var(--vh)*70)] 
-                     w-full h-full flex justify-end"
->
-  <Image
-    src={Educationhero}
-    alt="Education Hero"
-    className="object-contain"
-  />
-</div> */}
+
 
         </div>
+      </div> */}
+      <div className="relative">
+        <Image src={educationLanding} alt="" />
+        <div className="absolute top-[14vw] left-[10vw] flex justify-between w-[53vw]">
+          <div className="w-[35vw]">
+            <h1 className=" leading-[4vw] block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start">
+              Grow Your Ed Tech <br /> Institution With <br />
+              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                AI Conversational <br />
+                Learning
+              </span>
+            </h1>
+          
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline xs:text-[4vw] text-start ">
+              Engage with students instantly across various platforms.
+              Efficiently manage classes, deliver personalized updates to
+              parents about their children, and foster a strong, enduring
+              relationship between students and the school.
+            </p>
+            <div className="items-center gap-5 z-50">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold pointer ">
+                  Request Demo
+                </button>
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col relative">
+            {EducationScrolling?.map((data, index) => (
+              <div
+                key={index}
+                className={`scroll-item mb-2 flex items-center justify-end transition-transform duration-700 ease-in-out ${
+                  index <= currentIndex
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-full opacity-0"
+                }`}
+              >
+                {data?.icon && (
+                  <Image
+                    src={data.icon}
+                    alt={`Education Icon ${index + 1}`}
+                    // width={100}
+                    // height={150}
+                    // className="xl:h-[30vh] xs:h-[50vh]"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[210vw] md:mt-[120vw]">
+      <div className="lg:mt-[20vw] xl:mt-20 xs:mt-[210vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">

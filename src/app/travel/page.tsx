@@ -9,6 +9,7 @@ import TravelHero from "../../assets/Icons/TravelHero.svg";
 import TravelCard1 from "../../assets/Icons/TravelCard1.svg";
 import TravelCard2 from "../../assets/Icons/TravelCard2.svg";
 import TravelCard3 from "../../assets/Icons/TravelCard3.svg";
+import travelLanding from "../../assets/Icons/travelLanding.svg";
 
 import RealEstateHero from "../../assets/Icons/RealEstateHero.svg";
 import RealEstateCard1 from "../../assets/Icons/RealEstateCard1.svg";
@@ -37,7 +38,7 @@ import Growth from "@components/Growth";
 export default function Travel() {
   return (
     <div className="relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" />
+      {/* <Image src={ECommerceBg} alt="" />
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[50vh] md:min-h-[60vh] xs:min-h-[30vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
@@ -82,14 +83,7 @@ export default function Travel() {
                   Request Demo
                 </button>
               </a>
-              <button>
-                <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center md:items-center ">
-                  <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-                  <p className=" xs:text-[4vw] md:text-[2vw] lg:text-[1.05vw] text-[#FFFFFF] font-Inter font-medium">
-                    Tech Partner
-                  </p>
-                </div>
-              </button>{" "}
+             
             </div>
           </div>
           <div className="absolute  2xl:left-[5vw] 2xl:top-[33vw] xs:top-[100vw] lg:right-[25vw] lg:top-[80vw] xl:left-[7vw] xl:top-[33vw]  md:right-[10vw] md:top-[90vw] w-full h-full flex justify-end">
@@ -100,8 +94,45 @@ export default function Travel() {
             />{" "}
           </div>
         </div>
+      </div> */}
+
+      <div className="relative">
+        <Image src={travelLanding} alt="" />
+        <div className="absolute top-[14vw] left-[10vw]">
+          <div className="w-[35vw]">
+            <h1 className="leading-[3.5vw] xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start">
+              Grow Your Travel <br /> Business With <br />
+              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                AI Conversational <br />{" "}
+              </span>{" "}
+              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                Travel Assistant{" "}
+              </span>
+            </h1>
+           
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline  xs:text-[4vw] text-start ">
+              Gainwix empowers your agency to create a delightful travel
+              experience for your customers, from initial inquiry to post-trip
+              support. Let's transform your travel business together!
+            </p>
+            <div className="items-center gap-5 z-50">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                // className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold pointer ">
+                  Request Demo
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[200vw] md:mt-[120vw]">
+
+      <div className="lg:mt-[30vw] xl:mt-20 xs:mt-[200vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">
@@ -144,7 +175,7 @@ export default function Travel() {
             ></CommonCard>
           </div>
 
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l pb-[5vw] ">
             <CommonCard
               className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[4rem] xs:mx-[1rem] "
               text
@@ -177,7 +208,7 @@ export default function Travel() {
               image={TravelCard2}
             ></CommonCard>
           </div>
-          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l md:pb-[7vw]  ">
+          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l md:pb-[8vw]">
             <CommonCard
               text
               // className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
