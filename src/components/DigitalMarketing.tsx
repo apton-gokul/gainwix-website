@@ -109,7 +109,7 @@ const Carousel: React.FC = () => {
       <div ref={sliderRef} className="keen-slider xs:hidden ">
         {slides.map((slide) => (
           <div key={slide.id} className="keen-slider__slide">
-            <div className="w-[75%] xl:flex xl:flex-row xs:flex-row-reverse bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] rounded-3xl text-white shadow-lg mx-auto p-20">
+            <div className="w-[75%] xl:flex xl:flex-row xs:flex-row-reverse bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] rounded-3xl text-white shadow-lg mx-auto xs:p-3 lg:p-20">
               <div className="flex flex-col justify-center">
                 <Image src={slide.brand} alt="Slide" />{" "}
                 <p className="lg:text-[1vw] md:text-[1.5vw] xs:text-[3vw] text-[#908eb5] py-10 xl:w-[40vw]">

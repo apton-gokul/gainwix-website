@@ -11,6 +11,10 @@ import Education2 from "../assets/Icons/Education2.svg";
 import Education3 from "../assets/Icons/Education3.svg";
 import Education4 from "../assets/Icons/Education4.svg";
 import Education5 from "../assets/Icons/Education5.svg";
+import educationAnimation1 from "../assets/Icons/educatAnima-1.svg";
+import educationAnimation2 from "../assets/Icons/educatAnima-2.svg";
+import educationAnimation3 from "../assets/Icons/educatAnima-3.svg";
+
 
 import EcommerceScroll1 from "../assets/Icons/eCardScroll.svg";
 import EcommerceScroll2 from "../assets/Icons/eScroll1.svg";
@@ -395,6 +399,32 @@ export const CommerceCardList = [
     icon: ECommerceUpdate,
     text: "Push order updates Instantly",
   },
+];
+
+export const EducationAnimation = [
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+    icon: educationAnimation1,
+  },
+  {
+    id: 3,
+    icon: educationAnimation2,
+  },
+  {
+    id: 4,
+    icon: educationAnimation3,
+  },
+  // {
+  //   id: 5,
+  //   icon: Education4,
+  // },
+  // {
+  //   id: 6,
+  //   icon: Education5,
+  // },
 ];
 
 export const EducationScrolling = [

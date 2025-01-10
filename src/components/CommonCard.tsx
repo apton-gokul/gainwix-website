@@ -1,7 +1,10 @@
+"use client";
 import { cn } from "@helpers/cn";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BulletPoint from "../assets/Icons/bullet.svg";
+import { EducationAnimation, EducationScrolling } from "@constants/ecommerce";
+import educatAni from "../assets/Icons/educatAni.svg";
 
 interface ListItem {
   text?: string;
@@ -19,6 +22,7 @@ interface CardProps
   revers?: boolean;
   text?: boolean;
   heightMatch?: boolean;
+  imageAnimation?: boolean;
 }
 
 const Card: React.FC<CardProps> = (props) => {
@@ -32,8 +36,21 @@ const Card: React.FC<CardProps> = (props) => {
     revers,
     text,
     heightMatch,
+    imageAnimation,
     ...restProps
   } = props;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === EducationAnimation.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [EducationAnimation.length]);
 
   return (
     <div
@@ -108,6 +125,55 @@ const Card: React.FC<CardProps> = (props) => {
               heightMatch && "2xl:h-[70vh]"
             }`}
           />
+        </div>
+      )}
+      {imageAnimation && (
+        <div className="w-full border rounded-3xl bg-[#0E1738] border-[#2D3154] xs:w-[90vw] md:w-[70vw]  lg:w-[40vw] xl:w-[82vw] xl:h-[65vh] px-10 !pb-10">
+          <div className="relative flex items-end">
+            <Image
+              src={educatAni}
+              alt="Card Image"
+              className={`xl:w-[40vw] xl:h-[60vh] lg:w-[40vw] lg:h-[40vh]   md:h-[40vh] xl:mt-[5vw] 2xl:mt-20   md:ml-0  lg:mx-[10vw] xs:mt-2 z-10 flex justify-end ${
+                heightMatch && "2xl:h-[70vh]"
+              }`}
+            />
+            <div className="flex flex-col absolute top-[2vw] z-0">
+              {EducationAnimation?.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`scroll-item mb-2 flex items-center transition-transform duration-700 ease-in-out ${
+                      index === 1 && currentIndex === 0 // First image is visible
+                        ? "translate-x-0 opacity-100" // First image is fixed
+                        : index === 2 && currentIndex === 1 // Second image is active
+                        ? "-translate-y-[200%] translate-x-[20%] opacity-100"
+                        : index === 2 && currentIndex !== 1
+                        ? "-translate-y-[-100%] opacity-0" // Second image slides in from bottom
+                        : index === 1 && currentIndex === 1 // First image stays while second is active
+                        ? "translate-x-0 opacity-100" // First image remains in place
+                        : (index === 1 || index === 2) && currentIndex === 2 // First and second move left
+                        ? "translate-x-[-100%] opacity-0" // Move off-screen to the left
+                        : index === 3 && currentIndex === 2 // Third image is active
+                        ? "-translate-y-[55%] opacity-100" // Third image slides in from bottom
+                        : index === 3 && currentIndex !== 2 // Third image is off-screen
+                        ? "translate-y-[-0%] opacity-0" // Move third image off-screen to the bottom
+                        : "translate-x-[-100%] opacity-0" // Default: off-screen to the left
+                    }`}
+                  >
+                    {data?.icon && (
+                      <Image
+                        src={data.icon}
+                        alt={`Education Icon ${index + 1}`}
+                        // width={100}
+                        // height={150}
+                        className="object-cover h-auto"
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
     </div>

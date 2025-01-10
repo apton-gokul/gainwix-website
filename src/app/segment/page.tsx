@@ -8,6 +8,7 @@ import segment1 from "../../assets/Icons/segment1.svg";
 import segment2 from "../../assets/Icons/segment2.svg";
 import segment3 from "../../assets/Icons/segment3.svg";
 import segmentLanding from "../../assets/Icons/segmentationLanding.svg";
+import segmnetTab from "../../assets/Icons/segmentTab.svg";
 
 import segmentHero from "../../assets/Icons/Segmentation AI.svg";
 // components
@@ -97,8 +98,8 @@ export default function segment() {
         </div>
       </div> */}
 
-      <div className="relative">
-        <Image src={segmentLanding} alt="" />
+      <div className="relative xs:hidden lg:block">
+        <Image src={segmentLanding} alt="" className="" />
         <div className="absolute top-[14vw] left-[10vw]">
           <div className="w-[35vw]">
             <h1 className="xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw] leading-[3.8vw]  font-bold   text-[white] font-sora text-start">
@@ -136,8 +137,41 @@ export default function segment() {
         </div>
       </div>
 
-      <div className=" rounded-[120px]  lg:min-h-[120vh] xl:min-h-[150vh] mt-0 ">
-        <div className="md:py-0 xs:py-5  ">
+      <div className="relative lg:hidden">
+        <div className="absolute top-[16vw] sm:top-[24vw] xs:top-[30vw] w-full text-center">
+          <h1 className="xs:text-[7vw] text-[3.5vw] font-bold   text-[white] font-sora">
+            Reach Right Audience at the <br />
+            <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+              Right Time with Segmentation AI
+            </span>
+          </h1>
+
+          <p className="xs:text-[2vw] xs:px-2 font-light font-Inter mt-5 mb-7 text-[2vw] text-[#908eb5] xl:w-[28.5vw] md:items-center lg:items-baseline xl:text-start ">
+            Create precise customer segments based on behaviors, demographics,
+            and more. Deliver personalized, relevant messages that resonate,
+            improving engagement, retention, and conversions across every
+            campaign
+          </p>
+
+          <div className="items-center gap-5 ">
+            <a
+              href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+              target="_blank"
+              rel="noreferrer"
+              className="2xl:mt-[-0.7vw]"
+            >
+              {" "}
+              <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold pointer xs:h-[2rem]">
+                Request Demo
+              </button>
+            </a>
+          </div>
+        </div>
+        <Image src={segmnetTab} alt="" className="h-full" />
+      </div>
+
+      <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] mt-0 ">
+        <div className="md:py-0">
           <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
               <h1 className="xl:text-[3vw] lg:text-[5vw] md:text-[5vw] font-semibold text-[#FFFFFF] font-Sora text-center ">
@@ -151,7 +185,7 @@ export default function segment() {
                 </p>
               </h1>
             </div>
-            <div className="xs:block md:hidden w-[100%] h-[10vh] flex justify-center text-[3vw] font-medium font-Sora pt-10 mt-[100vw]">
+            <div className="xs:block md:hidden w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora pt-10">
               <h1 className="text-[6vw] font-bold text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">
                   Set new benchmarks And <br /> Hit Goals{" "}

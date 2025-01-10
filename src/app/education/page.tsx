@@ -213,7 +213,7 @@ export default function Education() {
 
       <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] ">
         <div className="md:py-0 xs:py-5  ">
-          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l pt-[5vw] ">
             <CommonCard
               // className="xl:mx-[5rem] lg:mx-[3rem] md:mx-[1vw]  w-full "
               text
@@ -244,12 +244,12 @@ export default function Education() {
             ></CommonCard>
           </div>
 
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l py-[10vw] ">
             <CommonCard
               className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] "
               text
               customTitle={
-                <div className="-mt-20 xs:mt-[10vw]   ">
+                <div className="-mt-20 xs:mt-[1vw]">
                   <div className="p-2 border-2 border-[#0F4EEF] rounded-[30px] inline-flex items-center bg-[#061b4d] mb-5">
                     <p className="text-[#A7C0FF]  lg:text-[1vw] md:text-[2vw] font-semibold pl-2 xl:px-4">
                       Gain Retention{" "}
@@ -276,11 +276,12 @@ export default function Education() {
                 </div>
               }
               list={EducationCardList1}
-              image={EducationCard2}
+              // image={EducationCard2}
+              imageAnimation
             ></CommonCard>
           </div>
 
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l py-10">
             <CommonCard
               text
               // className="xl:mx-[13rem] lg:mx-[7rem] md:mx-[5rem] xs:mx-[2rem] "
@@ -314,7 +315,7 @@ export default function Education() {
               revers
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  2xl:py-40">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l xl:py-20">
             <CommonCard
               text
               className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] "

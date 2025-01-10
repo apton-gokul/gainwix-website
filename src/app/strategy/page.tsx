@@ -101,12 +101,6 @@ export default function Ecommerce() {
                 </span>
               </p>
             </h1>
-            {/* <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw] lg:-mt-[100vw]  xs:text-center   lg:text-center xs:mt-10   ">
-              Build Game Changing Marketing <br /> Strategies
-              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                with Gainwix’s Strategy AI 
-              </span>{" "}
-            </h1> */}
             <p className=" xs:px-2 font-light font-Inter mt-5 mb-7  xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw] md:items-center lg:items-baseline  xl:text-start ">
               Achieve your marketing goals faster with our AI-driven strategy
               tool designed for precision and results.
